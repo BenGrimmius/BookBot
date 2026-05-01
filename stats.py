@@ -19,9 +19,20 @@ def number_of_characters(file_path):
                     num_of_chars[char_lower] = 1
                 else:
                     num_of_chars[char_lower] += 1
-    print(num_of_chars)
     return num_of_chars
 
 def report(file_path):
     dict = number_of_characters(file_path)
-    pass    
+    final = []
+    for key in dict:
+        final.append({"char": key, "num": dict[key]})
+    
+    num_of_words = get_book_text(file_path)
+
+    print(f""""
+          ============ BOOKBOT ============
+        Analyzing book found at books/frankenstein.txt...
+                ----------- Word Count ----------
+                        Found {num_of_words} total words
+                --------- Character Count -------
+          """)
