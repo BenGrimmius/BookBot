@@ -1,7 +1,6 @@
-def get_book_text():
-    print("hello")
+from stats import get_book_text
 
 def main():
-    get_book_text()
+    get_book_text("books/frankenstein.txt")
 
 main()
