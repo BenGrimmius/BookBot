@@ -8,7 +8,6 @@ def get_book_text(file_path):
 
 def number_of_characters(file_path):
     num_of_chars = {}
-    count = 1
 
     with open(file_path) as f:
         content = f.read().split()
@@ -34,14 +33,12 @@ def report(file_path):
     
     list_of_dict.sort(reverse=True,  key=sort_on)
 
-    printed_ls = def printed_list():
-        for key in list_of_dict:
-            print(f"{key}")
-
-
    
-        # print("============ BOOKBOT ============")
-        # ("Analyzing book found at {file_path}..")
-        # ("----------- Word Count ----------")
-        # (" Found {num_of_words} total words")
-        # ("--------- Character Count -------")
+    print("============ BOOKBOT ============")
+    print("Analyzing book found at {file_path}..")
+    print("----------- Word Count ----------")
+    print(" Found {num_of_words} total words")
+    for item in list_of_dict:
+        if item["char"].isalpha():
+            print(f"{item["char"]}: {item["num"]}")
+    print("--------- Character Count -------")
