@@ -23,16 +23,25 @@ def number_of_characters(file_path):
 
 def report(file_path):
     dict = number_of_characters(file_path)
-    final = []
+    list_of_dict = []
     for key in dict:
-        final.append({"char": key, "num": dict[key]})
+        list_of_dict.append({"char": key, "num": dict[key]})
     
     num_of_words = get_book_text(file_path)
 
-    print(f""""
-          ============ BOOKBOT ============
-        Analyzing book found at books/frankenstein.txt...
-                ----------- Word Count ----------
-                        Found {num_of_words} total words
-                --------- Character Count -------
-          """)
+    def sort_on(item):
+        return item["num"]
+    
+    list_of_dict.sort(reverse=True,  key=sort_on)
+
+    printed_ls = def printed_list():
+        for key in list_of_dict:
+            print(f"{key}")
+
+
+   
+        # print("============ BOOKBOT ============")
+        # ("Analyzing book found at {file_path}..")
+        # ("----------- Word Count ----------")
+        # (" Found {num_of_words} total words")
+        # ("--------- Character Count -------")
